@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Complaint - Complaint System</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>Complaint Management System</h1>
+        <nav id="nav"></nav>
+    </header>
+
+    <div id="alertContainer"></div>
+
+    <main class="container">
+        <h2>Track Your Complaint</h2>
+
+        <form id="trackForm">
+            <label>Enter Complaint ID:</label><br>
+            <input type="text" name="complaint_id" required><br><br>
+            <button type="submit">Track</button>
+        </form>
+
+        <br>
+
+        <div id="trackResult" class="status-box">
+            <h3>Complaint Status:</h3>
+            <p>Status will be displayed here</p>
+        </div>
+
+        <br>
+        <a href="/">Back to Home</a>
+    </main>
+
+    <footer>Developed for something creative</footer>
+    <script src="/common.js"></script>
+    <script src="/track.js"></script>
+</body>
+</html>
