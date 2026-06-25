@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - CCL Complaint System</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .tab-container { display: flex; gap: 10px; margin-bottom: 30px 0; background: #1e1810; padding: 14px; border-radius: 8px; width: 100%; }
+        .tab-btn { padding: 10px 22px; border: none; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; background: transparent; color: #ccc; }
+        .tab-btn.active { background: #d98c3f; color: #1e1810; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 10px; text-align: left; border: 1px solid #ddd; font-size: 13px; }
+        th { background: #f4f4f4; }
+
+        .form-box { max-width: 480px; background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 20px; margin-bottom: 24px; }
+        .form-box label { display: block; font-weight: 600; margin-top: 12px; margin-bottom: 4px; font-size: 13px; }
+        .form-box input, .form-box select {
+            width: 100%; padding: 9px; border: 1px solid #ccc; border-radius: 5px; font-size: 13px; box-sizing: border-box;
+        }
+        .form-box button { margin-top: 16px; padding: 9px 22px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Departmental Complaint Management System</h1>
+        <nav id="nav"></nav>
+    </header>
+
+    <div id="alertContainer"></div>
+
+    <main class="container">
+        <h2>Admin Dashboard</h2>
+        <h3 id="welcomeTitle">Welcome, Admin!</h3>
+        <p style="color:#888; font-size:13px;">Admin role: Monitoring only. Status changes are made by departments.</p>
+
+        <div class="tab-container">
+            <button class="tab-btn active" onclick="switchTab(this, 'monitor')">📊 All Complaints</button>
+            <button class="tab-btn" onclick="switchTab(this, 'users')">👤 Manage Users</button>
+            <button class="tab-btn" onclick="switchTab(this, 'depts')">🏢 Manage Departments</button>
+        </div>
+
+        <!-- TAB 1: MONITOR (read-only) -->
+        <div id="tab-monitor" class="tab-content active">
+            <div id="complaintsTable"><p>Loading...</p></div>
+        </div>
+
+        <!-- TAB 2: USERS -->
+        <div id="tab-users" class="tab-content">
+            <div class="form-box">
+                <h3 style="margin-top:0;">Add New Employee</h3>
+                <label>Full Name *</label>
+                <input type="text" id="u-name" placeholder="Employee Name">
+
+                <label>Employee Code *</label>
+                <input type="text" id="u-empcode" placeholder="e.g. CCL006">
+
+                <label>Email</label>
+                <input type="email" id="u-email" placeholder="name@ccl.com">
+
+                <label>Password *</label>
+                <input type="password" id="u-password" placeholder="Set a password">
+
+                <label>Department</label>
+                <select id="u-dept">
+                    <option value="">-- No Department (for Admin) --</option>
+                </select>
+
+                <label>Role</label>
+                <select id="u-role">
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+
+                <button onclick="addUser()">Add Employee</button>
+            </div>
+
+            <div id="usersTable"><p>Loading...</p></div>
+        </div>
+
+        <!-- TAB 3: DEPARTMENTS -->
+        <div id="tab-depts" class="tab-content">
+            <div class="form-box">
+                <h3 style="margin-top:0;">Add New Department</h3>
+                <label>Department Name *</label>
+                <input type="text" id="d-name" placeholder="e.g. Civil Department">
+                <button onclick="addDept()">Add Department</button>
+            </div>
+
+            <div id="deptsTable"><p>Loading...</p></div>
+        </div>
+
+    </main>
+
+    <footer>Developed by Sristi & Smrity</footer>
+    <script src="/common.js"></script>
+    <script src="/admin-dashboard.js"></script>
+</body>
+</html>
