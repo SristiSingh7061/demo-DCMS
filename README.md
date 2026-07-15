@@ -16,7 +16,6 @@ A web-based **Departmental Complaint Management System** built  to streamline th
 - 🔄 Status updates — Pending, In Progress, Resolved, Rejected
 - 💬 Remarks system with every status update
 - 📜 Complete action history for every complaint
-- 🎨 Dark luxury UI with gold & rose accents
 
 ---
 
