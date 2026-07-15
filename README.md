@@ -32,22 +32,6 @@ A web-based **Departmental Complaint Management System** built  to streamline th
 
 ---
 
-## 📁 Project Structure
-
-CMS/
-├── server.js
-├── db.js
-├── adminRoutes.js
-├── complaintRoutes.js
-├── authRoutes.js
-├── admin-dashboard.html
-├── admin-dashboard.js
-├── user-dashboard.html
-├── user-dashboard.js
-├── login.html
-├── login.js
-├── style.css
-└── common.js
 # Install Dependencies
   npm install
 
@@ -62,6 +46,14 @@ Import the SQL file or run migrations
 
 # Open in browser
   http://127.0.0.1:3000
+
+# Demo Credentials
+## Admin
+- Employee Code: Admin1
+- Password: admin123
+## Employee
+- Employee Code: CCL001
+- Password: test123
 
 # 📌How It Works
 - Admin adds employees and departments
